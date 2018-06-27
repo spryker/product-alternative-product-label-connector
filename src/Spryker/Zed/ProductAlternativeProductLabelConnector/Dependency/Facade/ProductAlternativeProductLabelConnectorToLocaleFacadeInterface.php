@@ -7,12 +7,10 @@
 
 namespace Spryker\Zed\ProductAlternativeProductLabelConnector\Dependency\Facade;
 
-interface ProductAlternativeProductLabelConnectorToProductAlternativeFacadeInterface
+interface ProductAlternativeProductLabelConnectorToLocaleFacadeInterface
 {
     /**
-     * @param int[] $productIds
-     *
-     * @return bool
+     * @return \Generated\Shared\Transfer\LocaleTransfer[]
      */
-    public function doAllConcreteProductsHaveAlternatives(array $productIds): bool;
+    public function getLocaleCollection();
 }
