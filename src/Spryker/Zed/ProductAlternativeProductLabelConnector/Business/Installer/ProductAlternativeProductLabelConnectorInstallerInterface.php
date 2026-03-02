@@ -9,8 +9,5 @@ namespace Spryker\Zed\ProductAlternativeProductLabelConnector\Business\Installer
 
 interface ProductAlternativeProductLabelConnectorInstallerInterface
 {
-    /**
-     * @return void
-     */
     public function install(): void;
 }

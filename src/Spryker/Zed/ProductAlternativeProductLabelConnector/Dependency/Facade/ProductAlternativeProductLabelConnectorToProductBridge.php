@@ -22,11 +22,6 @@ class ProductAlternativeProductLabelConnectorToProductBridge implements ProductA
         $this->productFacade = $productFacade;
     }
 
-    /**
-     * @param int $idProduct
-     *
-     * @return int|null
-     */
     public function findProductAbstractIdByConcreteId(int $idProduct): ?int
     {
         return $this->productFacade->findProductAbstractIdByConcreteId($idProduct);

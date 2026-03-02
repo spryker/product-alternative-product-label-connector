@@ -44,11 +44,6 @@ class ProductAlternativeProductLabelConnectorToProductLabelBridge implements Pro
         $this->productLabelFacade->updateLabel($productLabelTransfer);
     }
 
-    /**
-     * @param string $labelName
-     *
-     * @return \Generated\Shared\Transfer\ProductLabelTransfer|null
-     */
     public function findLabelByLabelName(string $labelName): ?ProductLabelTransfer
     {
         return $this->productLabelFacade->findLabelByLabelName($labelName);

@@ -40,11 +40,6 @@ class ProductAlternativeProductLabelConnectorToProductAlternativeFacadeBridge im
         return $this->productAlternativeFacade->doAllConcreteProductsHaveAlternatives($productIds);
     }
 
-    /**
-     * @param int $idProductConcrete
-     *
-     * @return bool
-     */
     public function isAlternativeProductApplicable(int $idProductConcrete): bool
     {
         return $this->productAlternativeFacade->isAlternativeProductApplicable($idProductConcrete);

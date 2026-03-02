@@ -25,11 +25,6 @@ interface ProductAlternativeProductLabelConnectorToProductLabelFacadeInterface
      */
     public function updateLabel(ProductLabelTransfer $productLabelTransfer);
 
-    /**
-     * @param string $labelName
-     *
-     * @return \Generated\Shared\Transfer\ProductLabelTransfer|null
-     */
     public function findLabelByLabelName(string $labelName): ?ProductLabelTransfer;
 
     /**

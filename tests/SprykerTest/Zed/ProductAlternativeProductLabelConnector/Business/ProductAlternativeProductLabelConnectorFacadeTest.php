@@ -30,9 +30,6 @@ class ProductAlternativeProductLabelConnectorFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -41,9 +38,6 @@ class ProductAlternativeProductLabelConnectorFacadeTest extends Unit
         $this->mockProductAlternativeFacadeDependency();
     }
 
-    /**
-     * @return void
-     */
     public function testFindProductsToAssignShouldReturnValidResults(): void
     {
         // Arrange
@@ -68,9 +62,6 @@ class ProductAlternativeProductLabelConnectorFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateAbstractProductWithAlternativesAvailableLabel(): void
     {
         // Arrange
@@ -91,9 +82,6 @@ class ProductAlternativeProductLabelConnectorFacadeTest extends Unit
         $this->tester->assertDatabaseTableContainsData();
     }
 
-    /**
-     * @return void
-     */
     protected function mockProductAlternativeFacadeDependency(): void
     {
         $productAlternativeFacadeMock = $this->getMockBuilder(

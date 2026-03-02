@@ -39,12 +39,6 @@ class ProductAlternativeProductLabelConnectorInstaller implements ProductAlterna
      */
     protected ProductAlternativeProductLabelConnectorToStoreFacadeInterface $storeFacade;
 
-    /**
-     * @param \Spryker\Zed\ProductAlternativeProductLabelConnector\ProductAlternativeProductLabelConnectorConfig $config
-     * @param \Spryker\Zed\ProductAlternativeProductLabelConnector\Dependency\Facade\ProductAlternativeProductLabelConnectorToProductLabelFacadeInterface $productLabelFacade
-     * @param \Spryker\Zed\ProductAlternativeProductLabelConnector\Dependency\Facade\ProductAlternativeProductLabelConnectorToLocaleFacadeInterface $localeFacade
-     * @param \Spryker\Zed\ProductAlternativeProductLabelConnector\Dependency\Facade\ProductAlternativeProductLabelConnectorToStoreFacadeInterface $storeFacade
-     */
     public function __construct(
         ProductAlternativeProductLabelConnectorConfig $config,
         ProductAlternativeProductLabelConnectorToProductLabelFacadeInterface $productLabelFacade,
@@ -57,9 +51,6 @@ class ProductAlternativeProductLabelConnectorInstaller implements ProductAlterna
         $this->storeFacade = $storeFacade;
     }
 
-    /**
-     * @return void
-     */
     public function install(): void
     {
         $this->getTransactionHandler()->handleTransaction(function () {
@@ -67,9 +58,6 @@ class ProductAlternativeProductLabelConnectorInstaller implements ProductAlterna
         });
     }
 
-    /**
-     * @return void
-     */
     protected function executeInstallTransaction(): void
     {
         if (!$this->productLabelFacade->findLabelByLabelName($this->config->getProductAlternativesLabelName())) {
@@ -93,11 +81,6 @@ class ProductAlternativeProductLabelConnectorInstaller implements ProductAlterna
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductLabelTransfer $productLabelTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductLabelTransfer
-     */
     protected function addDataToProductLabelTransfer(ProductLabelTransfer $productLabelTransfer): ProductLabelTransfer
     {
         $productLabelTransfer

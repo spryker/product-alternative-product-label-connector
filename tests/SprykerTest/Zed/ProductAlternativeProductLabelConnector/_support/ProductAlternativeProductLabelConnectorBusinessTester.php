@@ -29,9 +29,6 @@ class ProductAlternativeProductLabelConnectorBusinessTester extends Actor
 {
     use _generated\ProductAlternativeProductLabelConnectorBusinessTesterActions;
 
-    /**
-     * @return \Spryker\Zed\ProductAlternative\Business\ProductAlternativeFacadeInterface
-     */
     public function getProductAlternativeFacade(): ProductAlternativeFacadeInterface
     {
         return $this->getLocator()->productAlternative()->facade();

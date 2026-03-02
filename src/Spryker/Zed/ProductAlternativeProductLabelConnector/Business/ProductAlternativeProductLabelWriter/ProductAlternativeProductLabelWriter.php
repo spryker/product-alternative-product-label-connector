@@ -35,12 +35,6 @@ class ProductAlternativeProductLabelWriter implements ProductAlternativeProductL
      */
     protected $config;
 
-    /**
-     * @param \Spryker\Zed\ProductAlternativeProductLabelConnector\Dependency\Facade\ProductAlternativeProductLabelConnectorToProductInterface $productFacade
-     * @param \Spryker\Zed\ProductAlternativeProductLabelConnector\Dependency\Facade\ProductAlternativeProductLabelConnectorToProductLabelFacadeInterface $productLabelFacade
-     * @param \Spryker\Zed\ProductAlternativeProductLabelConnector\Dependency\Facade\ProductAlternativeProductLabelConnectorToProductAlternativeFacadeInterface $productAlternativeFacade
-     * @param \Spryker\Zed\ProductAlternativeProductLabelConnector\ProductAlternativeProductLabelConnectorConfig $config
-     */
     public function __construct(
         ProductAlternativeProductLabelConnectorToProductInterface $productFacade,
         ProductAlternativeProductLabelConnectorToProductLabelFacadeInterface $productLabelFacade,
@@ -53,11 +47,6 @@ class ProductAlternativeProductLabelWriter implements ProductAlternativeProductL
         $this->config = $config;
     }
 
-    /**
-     * @param int $idProduct
-     *
-     * @return void
-     */
     public function updateAbstractProductWithAlternativesAvailableLabel(int $idProduct): void
     {
         $productLabelTransfer = $this->findProductAlternativeProductLabel();
@@ -78,11 +67,6 @@ class ProductAlternativeProductLabelWriter implements ProductAlternativeProductL
         }
     }
 
-    /**
-     * @param int $idProductAbstract
-     *
-     * @return bool
-     */
     protected function isProductAlternativeLabelApplicable(int $idProductAbstract): bool
     {
         $productConcreteIds = $this->productFacade->findProductConcreteIdsByAbstractProductId($idProductAbstract);
@@ -99,9 +83,6 @@ class ProductAlternativeProductLabelWriter implements ProductAlternativeProductL
         return true;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ProductLabelTransfer|null
-     */
     protected function findProductAlternativeProductLabel(): ?ProductLabelTransfer
     {
         return $this->productLabelFacade->findLabelByLabelName(
@@ -109,11 +90,6 @@ class ProductAlternativeProductLabelWriter implements ProductAlternativeProductL
         );
     }
 
-    /**
-     * @param int $idProduct
-     *
-     * @return void
-     */
     public function removeProductAbstractRelationsForLabel(int $idProduct): void
     {
         $productLabelTransfer = $this->findProductAlternativeProductLabel();

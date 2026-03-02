@@ -45,11 +45,6 @@ class ProductAlternativeProductLabelConnectorDependencyProvider extends Abstract
      */
     public const FACADE_STORE = 'FACADE_STORE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -62,11 +57,6 @@ class ProductAlternativeProductLabelConnectorDependencyProvider extends Abstract
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductLabelFacade(Container $container): Container
     {
         $container->set(static::FACADE_PRODUCT_LABEL, function (Container $container) {
@@ -78,11 +68,6 @@ class ProductAlternativeProductLabelConnectorDependencyProvider extends Abstract
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductFacade(Container $container): Container
     {
         $container->set(static::FACADE_PRODUCT, function (Container $container) {
@@ -94,11 +79,6 @@ class ProductAlternativeProductLabelConnectorDependencyProvider extends Abstract
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductAlternativeFacade(Container $container): Container
     {
         $container->set(static::FACADE_PRODUCT_ALTERNATIVE, function (Container $container) {
@@ -110,11 +90,6 @@ class ProductAlternativeProductLabelConnectorDependencyProvider extends Abstract
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addLocaleFacade(Container $container): Container
     {
         $container->set(static::FACADE_LOCALE, function (Container $container) {
@@ -126,11 +101,6 @@ class ProductAlternativeProductLabelConnectorDependencyProvider extends Abstract
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORE, function (Container $container) {

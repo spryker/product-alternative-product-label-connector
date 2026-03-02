@@ -9,11 +9,6 @@ namespace Spryker\Zed\ProductAlternativeProductLabelConnector\Dependency\Facade;
 
 interface ProductAlternativeProductLabelConnectorToProductInterface
 {
-    /**
-     * @param int $idProduct
-     *
-     * @return int|null
-     */
     public function findProductAbstractIdByConcreteId(int $idProduct): ?int;
 
     /**

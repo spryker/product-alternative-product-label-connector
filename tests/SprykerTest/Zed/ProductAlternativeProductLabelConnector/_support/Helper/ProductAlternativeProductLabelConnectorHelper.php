@@ -13,27 +13,18 @@ use Orm\Zed\ProductLabel\Persistence\SpyProductLabelProductAbstractQuery;
 
 class ProductAlternativeProductLabelConnectorHelper extends Module
 {
-    /**
-     * @return void
-     */
     public function ensureDatabaseTableIsEmpty(): void
     {
         $query = $this->getProductLabelProductAbstractQuery();
         $query->deleteAll();
     }
 
-    /**
-     * @return void
-     */
     public function ensureTableProductAlternativeIsEmpty(): void
     {
         $query = $this->getProductAlternativeQuery();
         $query->deleteAll();
     }
 
-    /**
-     * @return void
-     */
     public function assertDatabaseTableContainsData(): void
     {
         $query = $this->getProductLabelProductAbstractQuery();
@@ -44,17 +35,11 @@ class ProductAlternativeProductLabelConnectorHelper extends Module
         );
     }
 
-    /**
-     * @return \Orm\Zed\ProductLabel\Persistence\SpyProductLabelProductAbstractQuery
-     */
     protected function getProductLabelProductAbstractQuery(): SpyProductLabelProductAbstractQuery
     {
         return SpyProductLabelProductAbstractQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ProductAlternative\Persistence\SpyProductAlternativeQuery
-     */
     protected function getProductAlternativeQuery(): SpyProductAlternativeQuery
     {
         return SpyProductAlternativeQuery::create();
